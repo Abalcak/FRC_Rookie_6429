@@ -16,6 +16,7 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.commands.intake.IntakeOnCommand;
 import frc.robot.commands.intake.IntakeShootCommand;
 import frc.robot.subsystems.intake.IntakeSubsystem;
+import frc.robot.subsystems.pivot.PivotSubsystem;
 
 
 /**
@@ -31,7 +32,7 @@ public class RobotContainer {
   
   private final CommandXboxController joystick = new CommandXboxController(0);
   private final Joystick operator = new Joystick(0);
-
+  private final PivotSubsystem pivotSubsystem = new PivotSubsystem();
   private final JoystickButton intake = new JoystickButton(operator, 0);
   private final JoystickButton shoot = new JoystickButton(operator, 0);
   
