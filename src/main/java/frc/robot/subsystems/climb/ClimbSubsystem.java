@@ -1,17 +1,44 @@
-// Copyright (c) FIRST and other WPILib contributors.
-// Open Source Software; you can modify and/or share it under the terms of
-// the WPILib BSD license file in the root directory of this project.
 
+//aabal
 package frc.robot.subsystems.climb;
 
+import com.revrobotics.spark.SparkBase.PersistMode;
+import com.revrobotics.spark.SparkBase.ResetMode;
+import com.revrobotics.spark.SparkMax;
+import com.revrobotics.spark.SparkLowLevel.MotorType;
+import com.revrobotics.spark.config.SparkMaxConfig;
+import com.revrobotics.spark.config.SparkBaseConfig.IdleMode;
+
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.RobotID;
 
 public class ClimbSubsystem extends SubsystemBase {
-  /** Creates a new ClimbSubsystem. */
-  public ClimbSubsystem() {}
 
-  @Override
-  public void periodic() {
-    // This method will be called once per scheduler run
-  }
+    private final SparkMax climbMotor = new SparkMax(33, MotorType.kBrushless);
+    
+    
+    public ClimbSubsystem() {}
+
+    public void climb(double power) {
+        climbMotor.set(-power);
+    }
+
+    public void unclimb(double power) {
+        climbMotor.set(power);
+    }
+
+    
+    public void hold(double power) {
+        climbMotor.set(power);
+    }
+
+    public void stop() {
+        climbMotor.stopMotor();
+
+    }
+
+    @Override
+    public void periodic() {
+        // This method will be called once per scheduler run
+    }
 }

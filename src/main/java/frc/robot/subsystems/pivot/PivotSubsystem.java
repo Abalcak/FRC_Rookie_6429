@@ -1,3 +1,5 @@
+
+//abal
 package frc.robot.subsystems.pivot;
 
 import com.ctre.phoenix6.hardware.CANcoder;
@@ -80,6 +82,6 @@ public class PivotSubsystem extends SubsystemBase {
 
   @Override
   public void periodic() {
-    // This method will be called once per scheduler run
+    SmartDashboard.putNumber("PIVOT | CORAL", getPivotPosition());
   }
 }
