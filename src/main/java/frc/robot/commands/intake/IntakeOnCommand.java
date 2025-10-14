@@ -15,10 +15,10 @@ import edu.wpi.first.wpilibj2.command.Command;
 public class IntakeOnCommand extends Command {
   private final IntakeSubsystem intakeSubsystem;
   
-  public IntakeOnCommand() {
-     this.intakeSubsystem = intakeSubsystem;
-     addRequirements(intakeSubsystem);
-  }
+  public IntakeOnCommand(IntakeSubsystem intakeSubsystem) {
+    this.intakeSubsystem = intakeSubsystem;
+    addRequirements(intakeSubsystem);
+}
 
   // Called when the command is initially scheduled.
   @Override
@@ -40,3 +40,5 @@ public class IntakeOnCommand extends Command {
     return false;
   }
 }
+
+//ASİL

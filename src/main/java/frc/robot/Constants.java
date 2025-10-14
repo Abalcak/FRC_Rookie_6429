@@ -1,4 +1,3 @@
-
 package frc.robot;
 import com.ctre.phoenix6.signals.InvertedValue;
 import com.ctre.phoenix6.signals.NeutralModeValue;
@@ -30,4 +29,23 @@ public final class Constants {
   public static final class IntakeConstants {
     public static final double IntakePower = 0.35;
 }
+
+public static final class PivotConstants {
+  public static final double PIVOT_KP = 0.07;
+  public static final double PIVOT_KI = 0.0002;
+  public static final double PIVOT_KD = 0.0002;
+
+  public static final double CLOSE = 0.0;
+  public static final double NORMAL = -5;
+  public static final double HP = -10.7;
+  public static final double REEFL1 = -9;
+  public static final double REEF_L2_L3 = -24.5;
+  public static final double REEF_L4 = -24;
+  public static final double BARGE = -24;
+  public static final double PROCESSOR = -24;
+  public static final double A1 = -22.5;
+  public static final double A2 = -22.4;
+
+  public static final double PIVOT_POWER = 0.65;
+}  
 }

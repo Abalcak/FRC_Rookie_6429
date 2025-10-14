@@ -5,17 +5,20 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
-import frc.robot.Constants.OperatorConstants;
+// import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.Autos;
+import com.pathplanner.lib.auto.NamedCommands;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
-
+import frc.robot.RobotID.Pivot;
 import frc.robot.commands.intake.IntakeOnCommand;
 import frc.robot.commands.intake.IntakeShootCommand;
 import frc.robot.subsystems.intake.IntakeSubsystem;
+import frc.robot.subsystems.pivot.PivotSubsystem;
+import frc.robot.subsystems.pivot.PivotSubsystem.PivotPosition;
 
 
 /**
@@ -31,7 +34,7 @@ public class RobotContainer {
   
   private final CommandXboxController joystick = new CommandXboxController(0);
   private final Joystick operator = new Joystick(0);
-
+  private final PivotSubsystem pivotSubsystem = new PivotSubsystem();
   private final JoystickButton intake = new JoystickButton(operator, 0);
   private final JoystickButton shoot = new JoystickButton(operator, 0);
   
@@ -71,3 +74,5 @@ public class RobotContainer {
     return Autos.exampleAuto(m_exampleSubsystem);
   }
 }
+
+//ASİL

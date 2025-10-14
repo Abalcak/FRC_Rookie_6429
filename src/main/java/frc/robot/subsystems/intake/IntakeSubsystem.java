@@ -19,43 +19,38 @@ public class IntakeSubsystem extends SubsystemBase {
     private final RelativeEncoder rollerleftencoder = RollerLeft.getEncoder();
     private final RelativeEncoder rollerrightencoder = RollerRight.getEncoder();
 
+    public IntakeSubsystem() {}
 
-  /** Creates a new IntakeSubsytem. */
-  public IntakeSubsytem() {}
+    public void intakeOn(double power) {
+        RollerLeft.set(power);
+        RollerRight.set(-power);
+    }
 
 
+    public void intakeShoot(double power) {
+        RollerLeft.set(-power);
+        RollerRight.set(power);
+    }
 
-  // Intake Alma
-  public void intakeOn(double power) {
+    
 
-    RollerLeft.set(power);
-    RollerRight.set(-power);
+    public void stopIntake() {
+        RollerLeft.stopMotor();
+        RollerRight.stopMotor();
+    }
 
-  }
+    public double getleftposition() {
+        return rollerleftencoder.getPosition();
+    }
 
-  // Intake Fırlatma
-  public void IntakeShoot(double power) {
-    RollerLeft.set(-power);
-    RollerRight.set(power);
-  }
+    public double getrightposition() {
+        return rollerrightencoder.getPosition();
+    }
 
-  // Motor Durdurma
-  public void stopIntake() {
-    RollerLeft.stopMotor();
-    RollerRight.stopMotor();
-  }
+    @Override
+    public void periodic() {
 
-  public double getleftposition() {
-    return rollerleftencoder.getPosition();
-  }
-
-  
-  public double getrightposition() {
-    return rollerrightencoder.getPosition();
-  }
-
-  @Override
-  public void periodic() {
-    // This method will be called once per scheduler run
-  }
+    }
 }
+
+//ASİL
