@@ -4,30 +4,27 @@
 
 package frc.robot.commands.multi;
 
-import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
+import frc.robot.commands.elevator.ElevatorCommand;
+import frc.robot.commands.pivot.PivotControl;
+import frc.robot.subsystems.elevator.ElevatorSubsystem;
+import frc.robot.subsystems.elevator.ElevatorSubsystem.ElevatorPosition;
+import frc.robot.subsystems.pivot.PivotSubsystem;
+import frc.robot.subsystems.pivot.PivotSubsystem.PivotPosition;
 
-/* You should consider using the more terse Command factories API instead https://docs.wpilib.org/en/stable/docs/software/commandbased/organizing-command-based.html#defining-commands */
-public class AutoLifter extends Command {
+// NOTE:  Consider using this command inline, rather than writing a subclass.  For more
+// information, see:
+// https://docs.wpilib.org/en/stable/docs/software/commandbased/convenience-features.html
+public class AutoLifter extends ParallelCommandGroup {
+  private ElevatorSubsystem elevatorSubsystem;
+  private PivotSubsystem pivotSubsystem;
   /** Creates a new AutoLifter. */
-  public AutoLifter() {
-    // Use addRequirements() here to declare subsystem dependencies.
-  }
-
-  // Called when the command is initially scheduled.
-  @Override
-  public void initialize() {}
-
-  // Called every time the scheduler runs while the command is scheduled.
-  @Override
-  public void execute() {}
-
-  // Called once the command ends or is interrupted.
-  @Override
-  public void end(boolean interrupted) {}
-
-  // Returns true when the command should end.
-  @Override
-  public boolean isFinished() {
-    return false;
+  public AutoLifter(ElevatorSubsystem elevatorSubsystem, ElevatorPosition elevatorPosition, PivotSubsystem pivotSubsystem, PivotPosition pivotPosition) {
+    // Add your commands in the addCommands() call, e.g.
+    // addCommands(new FooCommand(), new BarCommand());
+    addCommands(
+      new ElevatorCommand(elevatorSubsystem, elevatorPosition),
+      new PivotControl(pivotSubsystem, pivotPosition)
+    );
   }
 }
