@@ -12,7 +12,7 @@ public class IntakeShootCommand extends Command {
   private final IntakeSubsystem intakeSubsystem;
   public IntakeShootCommand() {
     this.intakeSubsystem = intakeSubsystem;
-    addRequirements(intakeSubsystem;);
+    addRequirements(intakeSubsystem);
   }
 
   // Called when the command is initially scheduled.
