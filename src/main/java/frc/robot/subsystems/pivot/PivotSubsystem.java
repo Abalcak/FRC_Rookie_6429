@@ -32,18 +32,16 @@ public class PivotSubsystem extends SubsystemBase {
     pivotController=new PIDController(Constants.PivotConstants.PIVOT_KP, Constants.PivotConstants.PIVOT_KI, Constants.PivotConstants.PIVOT_KD);
     pivotController.setIntegratorRange(-0.5,0.5);
     pivotController.setTolerance(0.5,6);
-    pivotController.setPosition(0);
+    pivotEncoder.setPosition(0);
   }
-  public void setPivot(double speed){
-    PivotMotor.set(speed);
-  }
+
   public void setSetPoint(double setPoint){
     pivotController.setSetpoint(setPoint);
 
   }
   public void setDistance(double setPoint){
     PIDOutput = pivotController.calculate(getEncoderPosition() - setPoint);
-    setPivot(PIDOutput);
+    pivotUp(PIDOutput);
 
   }
   public void pivotUp(double speed){

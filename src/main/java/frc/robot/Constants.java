@@ -30,4 +30,38 @@ public final class Constants {
   public static final class IntakeConstants {
     public static final double IntakePower = 0.35;
 }
+public static final class PivotConstants {
+  public static final double PIVOT_KP = 0.07;
+  public static final double PIVOT_KI = 0.0002;
+  public static final double PIVOT_KD = 0.0002;
+
+  public static final double CLOSE = 0.0;
+  public static final double NORMAL = -5;
+  public static final double HP = -10.7;
+  public static final double REEFL1 = -9;
+  public static final double REEF_L2_L3 = -24.5;
+  public static final double REEF_L4 = -24;
+  public static final double BARGE = -24;
+  public static final double PROCESSOR = -24;
+  public static final double A1 = -22.5;
+  public static final double A2 = -22.4;
+
+  public static final double PIVOT_POWER = 0.65;
+} 
+public static final class ElevatorConstants {
+  public static final double ELEVATOR_KP = 0.07;
+  public static final double ELEVATOR_KI = 0.0002;
+  public static final double ELEVATOR_KD = 0.0002;
+
+
+
+  public static final double CORAL1 = 5;
+  public static final double CORAL2 = 10;
+  public static final double CORAL3 = 15;
+  public static final double ALGI1 = 9;
+  public static final double ALGI2 = 14;
+  public static final double BARGE = -24;
+  public static final double HUMAN_PLAYER = 10;
+
+}
 }

@@ -21,7 +21,7 @@ public class IntakeSubsystem extends SubsystemBase {
 
 
   /** Creates a new IntakeSubsytem. */
-  public IntakeSubsytem() {}
+  public IntakeSubsystem() {}
 
 
 
